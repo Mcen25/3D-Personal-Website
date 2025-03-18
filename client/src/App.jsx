@@ -2,7 +2,6 @@
 import { Router, Route } from "@solidjs/router";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
-import LoginPage from "./pages/LoginPage";
 import ContentPage from "./pages/ContentPage";
 
 function App() {
