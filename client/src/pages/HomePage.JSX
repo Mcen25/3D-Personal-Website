@@ -12,9 +12,7 @@ export default function HomePage() {
     <div className={styles.root}>
       <Navbar />
       {/* <GLTFPage modelPath={shibaModel} /> */}
-      <GLTFPage modelPath={room} />
-
-      <button class={styles.button}></button>
+      <GLTFViewer modelPath={room} />
     </div>
   );
 }
