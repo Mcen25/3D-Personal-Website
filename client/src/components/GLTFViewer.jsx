@@ -17,8 +17,7 @@ const GLTFViewer = (props) => {
 
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0xb5b0af);
-
-    // Get container dimensions
+    
     const width = containerRef.clientWidth;
     const height = containerRef.clientHeight;
 
@@ -37,15 +36,13 @@ const GLTFViewer = (props) => {
     controls.enableZoom = false;
     controls.enablePan = true;
 
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.4); // reduced intensity for softer lighting
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
     scene.add(ambientLight);
 
-    // Add a Hemisphere light for sky/ground effect
     const hemiLight = new THREE.HemisphereLight(0xaaaaaa, 0x444444, 0.6);
     hemiLight.position.set(0, 20, 0);
     scene.add(hemiLight);
 
-    // Update directional light settings
     const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
     directionalLight.position.set(5, 10, 7.5);
     directionalLight.castShadow = true;
