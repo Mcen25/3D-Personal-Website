@@ -5,6 +5,10 @@ export default function IntroPage() {
   const [animate, setAnimate] = createSignal(false);
 
   const handleClick = () => {
+
+    const audio = new Audio("/src/assets/sound.wav");
+    audio.play();
+
     setAnimate(false);
     setTimeout(() => setAnimate(true), 10);
   };
