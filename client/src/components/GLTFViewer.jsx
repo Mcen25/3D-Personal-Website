@@ -2,6 +2,7 @@ import { onMount, onCleanup, createSignal } from "solid-js";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import gsap from 'gsap';
 
 const GLTFViewer = (props) => {
   let containerRef;
@@ -16,12 +17,12 @@ const GLTFViewer = (props) => {
     }
 
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0xb5b0af);
+    scene.background = new THREE.Color(0x000000);
     
     const width = containerRef.clientWidth;
     const height = containerRef.clientHeight;
 
-    const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({
       antialias: true,
       alpha: false,
@@ -33,8 +34,13 @@ const GLTFViewer = (props) => {
     containerRef.appendChild(renderer.domElement);
 
     const controls = new OrbitControls(camera, renderer.domElement);
-    controls.enableZoom = false;
-    controls.enablePan = true;
+    controls.enableZoom = true;
+    controls.enablePan = false;
+
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.1;
+
+    controls.enabled = false;
 
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
     scene.add(ambientLight);
@@ -51,8 +57,6 @@ const GLTFViewer = (props) => {
     directionalLight.shadow.camera.top = 10;
     directionalLight.shadow.camera.bottom = -10;
     scene.add(directionalLight);
-
-    camera.position.set(1.5, 1, 1.5);
 
     const loader = new GLTFLoader();
     loader.load(
@@ -73,8 +77,29 @@ const GLTFViewer = (props) => {
         const maxDim = Math.max(size.x, size.y, size.z);
         const scale = 2 / maxDim;
         gltf.scene.scale.multiplyScalar(scale);
-
         gltf.scene.position.sub(center.multiplyScalar(scale));
+
+        const targetCameraPosition = new THREE.Vector3(1.5, 1, 1.5);
+        const startCameraPosition =  new THREE.Vector3(1.5, 1000, 1.5);
+
+        const animationDuration = 2000;
+        const animationStart = performance.now();
+
+        camera.position.copy(startCameraPosition);
+
+        gsap.to(camera.position, {
+          x: targetCameraPosition.x,
+          y: targetCameraPosition.y,
+          z: targetCameraPosition.z,
+          duration: 2,
+          
+          ease: "power2.inOut",
+          onComplete: () => {
+            camera.lookAt(0, 0, 0);
+            controls.enabled = true;
+            controls.update();
+          }
+        });
 
         setLoading(false);
       },
@@ -94,7 +119,6 @@ const GLTFViewer = (props) => {
       controls.update();
       renderer.render(scene, camera);
     };
-
     animate();
 
     const handleResize = () => {
