@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100.12 11.27">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        font-family: Roboto-Medium, Roboto;
+        font-size: 10px;
+        font-weight: 500;
+      }
+
+      .cls-2 {
+        letter-spacing: 0em;
+      }
+
+      .cls-3 {
+        letter-spacing: -.06em;
+      }
+
+      .cls-4 {
+        letter-spacing: 0em;
+      }
+
+      .cls-5 {
+        letter-spacing: .02em;
+      }
+
+      .cls-6 {
+        letter-spacing: 0em;
+      }
+
+      .cls-7 {
+        letter-spacing: -.11em;
+      }
+    </style>
+  </defs>
+  <text class="cls-1" transform="translate(0 8.55)"><tspan x="0" y="0">Matthew E</tspan><tspan class="cls-3" x="47.31" y="0">n</tspan><tspan class="cls-7" x="52.28" y="0">’</tspan><tspan class="cls-6" x="53.32" y="0">s </tspan><tspan class="cls-4" x="60.97" y="0">P</tspan><tspan x="67.3" y="0">o</tspan><tspan class="cls-5" x="72.99" y="0">r</tspan><tspan class="cls-2" x="76.75" y="0">tfolio</tspan></text>
+</svg>
