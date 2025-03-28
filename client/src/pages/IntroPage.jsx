@@ -1,6 +1,7 @@
 import { createSignal } from "solid-js";
 import { useNavigate } from "@solidjs/router";
 import styles from "./IntroPage.module.css";
+import title from "../assets/Title4.svg";
 
 export default function IntroPage() {
   const [animate, setAnimate] = createSignal(false);
@@ -21,11 +22,11 @@ export default function IntroPage() {
 
   return (
     <div className={styles.root}>
-      <button 
-        onClick={handleClick} 
+      <button
+        onClick={handleClick}
         className={`${styles.title} ${animate() ? styles.animation : ""}`}
       >
-        Matthew En's Portfolio
+        <img src={title} alt="Matthew En's Portfolio" />
       </button>
     </div>
   );
