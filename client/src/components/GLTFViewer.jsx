@@ -22,7 +22,7 @@ const GLTFViewer = (props) => {
     const width = containerRef.clientWidth;
     const height = containerRef.clientHeight;
 
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({
       antialias: true,
       alpha: false,
@@ -36,10 +36,8 @@ const GLTFViewer = (props) => {
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableZoom = true;
     controls.enablePan = false;
-
     controls.enableDamping = true;
     controls.dampingFactor = 0.1;
-
     controls.enabled = false;
 
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
@@ -63,17 +61,11 @@ const GLTFViewer = (props) => {
       props.modelPath,
       (gltf) => {
         console.log("Model loaded successfully");
-        
-        gltf.scene.traverse((child) => {
-          console.log(child.name || child.type, child);
-        });
-
         scene.add(gltf.scene);
 
         const box = new THREE.Box3().setFromObject(gltf.scene);
         const center = box.getCenter(new THREE.Vector3());
         const size = box.getSize(new THREE.Vector3());
-
         const maxDim = Math.max(size.x, size.y, size.z);
         const scale = 2 / maxDim;
         gltf.scene.scale.multiplyScalar(scale);
@@ -81,10 +73,6 @@ const GLTFViewer = (props) => {
 
         const targetCameraPosition = new THREE.Vector3(1.5, 1, 1.5);
         const startCameraPosition =  new THREE.Vector3(1.5, 1000, 1.5);
-
-        const animationDuration = 2000;
-        const animationStart = performance.now();
-
         camera.position.copy(startCameraPosition);
 
         gsap.to(camera.position, {
@@ -92,7 +80,6 @@ const GLTFViewer = (props) => {
           y: targetCameraPosition.y,
           z: targetCameraPosition.z,
           duration: 2,
-          
           ease: "power2.inOut",
           onComplete: () => {
             camera.lookAt(0, 0, 0);
@@ -107,12 +94,27 @@ const GLTFViewer = (props) => {
         const progress = (xhr.loaded / xhr.total) * 100;
         console.log(`Loading: ${progress.toFixed(2)}%`);
       },
-      (error) => {
-        console.error("Error loading model:", error);
-        setError(`Failed to load 3D model: ${error.message}`);
+      (loadError) => {
+        console.error("Error loading model:", loadError);
+        setError(`Failed to load 3D model: ${loadError.message}`);
         setLoading(false);
       }
     );
+
+    const raycaster = new THREE.Raycaster();
+    const pointer = new THREE.Vector2();
+    const onClick = (event) => {
+      const rect = containerRef.getBoundingClientRect();
+      pointer.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+      pointer.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+      raycaster.setFromCamera(pointer, camera);
+      const intersections = raycaster.intersectObjects(scene.children, true);
+      if (intersections.length > 0) {
+        console.log("Clicked on:", intersections[0].object);
+      }
+    };
+
+    containerRef.addEventListener("click", onClick);
 
     const animate = () => {
       requestAnimationFrame(animate);
@@ -124,17 +126,18 @@ const GLTFViewer = (props) => {
     const handleResize = () => {
       const width = containerRef.clientWidth;
       const height = containerRef.clientHeight;
-
       camera.aspect = width / height;
       camera.updateProjectionMatrix();
       renderer.setSize(width, height);
     };
-
     window.addEventListener("resize", handleResize);
 
     onCleanup(() => {
       window.removeEventListener("resize", handleResize);
-      containerRef.removeChild(renderer.domElement);
+      containerRef.removeEventListener("click", onClick);
+      if (renderer.domElement && containerRef.contains(renderer.domElement)) {
+        containerRef.removeChild(renderer.domElement);
+      }
       renderer.dispose();
     });
   });
