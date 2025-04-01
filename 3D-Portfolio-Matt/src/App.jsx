@@ -1,10 +1,16 @@
-import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+import * as THREE from 'three'
+import { useLayoutEffect, useRef, useState } from 'react'
+import { Canvas, applyProps, useFrame } from '@react-three/fiber'
+import { PerformanceMonitor, AccumulativeShadows, RandomizedLight, Environment, Lightformer, Float, useGLTF } from '@react-three/drei'
+import { LayerMaterial, Color, Depth } from 'lamina'
+
 function App() {
   const [count, setCount] = useState(0)
+  const [degraded, degrade] = useState(false)
 
   return (
     <>
@@ -30,6 +36,14 @@ function App() {
       </p>
     </>
   )
+}
+
+function RoomModel(props) {
+
+}
+
+function CameraRig() {
+
 }
 
 export default App
