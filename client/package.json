@@ -16,7 +16,7 @@
     "@rollup/plugin-url": "^8.0.2",
     "rollup-plugin-terser": "^7.0.2",
     "solid-devtools": "^0.29.2",
-    "vite": "^5.0.11",
+    "vite": "^5.4.16",
     "vite-plugin-solid": "^2.10.2"
   },
   "dependencies": {
@@ -25,7 +25,10 @@
     "@types/three": "^0.170.0",
     "gsap": "^3.12.7",
     "node": "^20.19.0",
+    "solid-drei": "0.0.3",
     "solid-js": "^1.9.3",
-    "three": "^0.170.0"
+    "solid-three": "^0.2.0",
+    "three": "^0.170.0",
+    "three-stdlib": "^2.35.14"
   }
 }
