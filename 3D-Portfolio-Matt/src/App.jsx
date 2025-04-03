@@ -5,7 +5,7 @@ import './App.css'
 import * as THREE from 'three'
 import { useLayoutEffect, useRef, useState } from 'react'
 import { Canvas, applyProps, useFrame } from '@react-three/fiber'
-import { PerformanceMonitor, AccumulativeShadows, RandomizedLight, Environment, Lightformer, Float, useGLTF } from '@react-three/drei'
+import { PerformanceMonitor, AccumulativeShadows, RandomizedLight, Environment, Lightformer, Float, useGLTF, OrbitControls} from '@react-three/drei'
 import { LayerMaterial, Color, Depth } from 'lamina'
 
 function App() {
@@ -13,37 +13,33 @@ function App() {
   const [degraded, degrade] = useState(false)
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <Canvas shadows camera={{fov: 45 }} style={{ width: '100%', height: '100%' }}>
+      <OrbitControls />
+      <spotLight position={[0, 15, 0]} angle={0.3} penumbra={1} castShadow intensity={2} shadow-bias={-0.0001} />
+      <ambientLight intensity={0.5} />
+      <RoomModel/>
+      <AccumulativeShadows position={[0, -1.16, 0]} frames={100} alphaTest={0.9} scale={10}>
+        <RandomizedLight amount={8} radius={10} ambient={0.5} position={[1, 5, -1]} />
+      </AccumulativeShadows>
+
+      <PerformanceMonitor onDecline={() => degrade(true)} />
+      {/* <Environment frames={degraded ? 1 : Infinity} resolution={256} background blur={1}>
+      </Environment> */}
+      {/* <CameraRig /> */}
+    </Canvas>
   )
 }
 
 function RoomModel(props) {
-
+  const { scene, nodes, materials } = useGLTF('/RealisticRoom.glb')
+  return <primitive object={scene} {...props} />
 }
 
-function CameraRig() {
-
-}
+// function CameraRig({ v = new THREE.Vector3() }) {
+//   return useFrame((state) => {
+//     const t = state.clock.elapsedTime
+//     state.camera.lookAt(0, 0, 0)
+//   })
+// }
 
 export default App
