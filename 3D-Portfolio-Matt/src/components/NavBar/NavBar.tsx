@@ -14,30 +14,30 @@ const NavBar: FC<NavBarProps> = () => {
   return (
       <div className="NavBar">
         <div className="container mx-auto flex justify-between items-center">
-        <div className="ml-4">
-          <h2
-            className="text-white text-base font-medium"
-            style={{ fontFamily: '"Merriweather", serif' }}
-          >
-            Matthew En
-          </h2>
-        </div>
-        <div className='ml-4'>
-          <a
-            href="#projects"
-            className="text-white text-base px-3 font-medium"
-            style={{ fontFamily: '"Merriweather", serif' }}
-          >
-            Projects
-          </a>
-        </div>
-        <div className="ml-4">
-          <a
-            href="https://drive.google.com/file/d/1ltXc6CbdqCk--ctWWygkw-YYVQXiEgKP/view?usp=sharing"
-            className="text-white text-base px-3 font-medium"
-            style={{ fontFamily: '"Merriweather", serif' }}
-          >
-            Resume
+          <div className="ml-4 text-left">
+            <h2
+              className="text-white text-base font-medium"
+              style={{ fontFamily: '"Merriweather", serif' }}
+            >
+              Matthew En
+            </h2>
+          </div>
+          <div className='ml-4'>
+            <a
+              href="#projects"
+              className="text-white text-base px-3 font-medium"
+              style={{ fontFamily: '"Merriweather", serif' }}
+            >
+              Projects
+            </a>
+          </div>
+          <div className="ml-4 text-right">
+            <a
+              href="https://drive.google.com/file/d/1ltXc6CbdqCk--ctWWygkw-YYVQXiEgKP/view?usp=sharing"
+              className="text-white text-base px-3 font-medium"
+              style={{ fontFamily: '"Merriweather", serif' }}
+            >
+              Resume
           </a>
         </div>
       </div>
