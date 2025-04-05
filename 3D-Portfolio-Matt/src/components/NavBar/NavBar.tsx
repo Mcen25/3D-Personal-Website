@@ -12,7 +12,8 @@ const navigation = [
 
 const NavBar: FC<NavBarProps> = () => {
   return (
-      <div className="container mx-auto flex justify-between items-center">
+      <div className="NavBar">
+        <div className="container mx-auto flex justify-between items-center">
         <div className="ml-4">
           <h2
             className="text-white text-base font-medium"
@@ -40,6 +41,8 @@ const NavBar: FC<NavBarProps> = () => {
           </a>
         </div>
       </div>
+      </div>
+      
   );
 };
 

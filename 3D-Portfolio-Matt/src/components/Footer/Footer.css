@@ -1,9 +1,17 @@
 .Footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #383838; /* optional: choose a background */
-    color: #fff; /* optional: ensure text is visible */
-    text-align: center;
-    padding: 1rem;
-  }
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-container {
+  width: 100%;
+  padding: 4rem;
+  background-color: rgb(58, 58, 58);
+  color: #939393;
+  text-align: center;
+}

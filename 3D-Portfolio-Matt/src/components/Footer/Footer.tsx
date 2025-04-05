@@ -5,7 +5,11 @@ interface FooterProps {}
 
 const Footer: FC<FooterProps> = () => (
   <div className="Footer">
-    Footer Component
+    {/* <div className="footer-container">
+      <div className="footer-inner">
+        Footer Component
+      </div>
+    </div> */}
   </div>
 );
 
