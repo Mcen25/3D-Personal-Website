@@ -39,15 +39,15 @@ const Intro: FC<IntroProps> = () => (
           Experience
         </h2>
         <div className="space-y-2 mt-2">
-          <h3 className="text-white">
+          <p className="text-white">
             Research Assistant @DARoS Lab at the University of Massachusetts Amherst - Feburary 2025 - Present
-          </h3>
-          <h3 className="text-white">
+          </p>
+          <p className="text-white">
             Undergraduate Research Volunteer - December 2024 - Feburary 2025
-          </h3>
-          <h3 className="text-white">
+          </p>
+          <p className="text-white">
             Technical Instructor - June 2024 - August 2024
-          </h3>
+          </p>
         </div>
       </div>
       <div className="ml-4 text-left">

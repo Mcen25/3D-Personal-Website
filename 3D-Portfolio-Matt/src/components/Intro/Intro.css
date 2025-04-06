@@ -18,3 +18,14 @@
         transition: none;
     }
 }
+
+h2 {
+    color: white;
+    font-size: 1rem;
+    font-weight: 500; 
+    font-family: "Merriweather", serif;
+}
+
+p {
+    font-size: 0.9rem;
+}
