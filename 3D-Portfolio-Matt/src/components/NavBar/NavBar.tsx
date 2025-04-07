@@ -12,7 +12,7 @@ const navigation = [
 
 const NavBar: FC<NavBarProps> = () => {
   return (
-      <div className="NavBar">
+      <div className="NavBar mt-5">
         <div className="container mx-auto flex justify-between items-center">
           <div className="ml-4 text-left">
             <h2
