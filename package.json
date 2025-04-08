@@ -1,0 +1,21 @@
+{
+  "name": "3d-personal-website",
+  "version": "1.0.0",
+  "description": "My personal website to show off my resume and works that I am currently doing.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mcen25/3D-Personal-Website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Mcen25/3D-Personal-Website/issues"
+  },
+  "homepage": "https://github.com/Mcen25/3D-Personal-Website#readme"
+}
