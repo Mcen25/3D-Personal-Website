@@ -18,9 +18,8 @@ const Footer: FC<FooterProps> = () => (
         <div className="footer-section text-left">
           <h3 className="font-bold mb-2">Connect</h3>
           <div className="social-links flex flex-col">
-            <a href="#" className="mb-2">LinkedIn</a>
-            <a href="#" className="mb-2">GitHub</a>
-            <a href="#">Twitter</a>
+            <a href="https://www.linkedin.com/in/matthewen25/" target="_blank" className="mb-2">LinkedIn</a>
+            <a href="https://github.com/Mcen25" target="_blank" className="mb-2">GitHub</a>
           </div>
         </div>
         <div className="footer-section text-left">
