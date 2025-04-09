@@ -4,7 +4,7 @@ import './BentoGrid.css';
 import { CardContainer, CardBody, CardItem } from '@/components/ui/3d-card';
 
 const BentoGrid = () => (
-<div className=" w-full flex items-center justify-center p-50">
+<div className=" w-full flex items-center justify-center p-30">
   <div className="grid h-full w-full grid-cols-3 auto-rows-auto gap-3">
       <CardContainer className="col-span-2 row-span-2">
         <Link to="/dga">
