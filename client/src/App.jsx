@@ -27,6 +27,8 @@ function App() {
           } 
         />
         <Route path="/dga" element={<DGA />} />
+        <Route path="/research" />
+        <Route path="/" />
       </Routes>
     </Router>
   );
