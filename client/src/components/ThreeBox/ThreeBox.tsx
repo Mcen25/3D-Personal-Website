@@ -1,9 +1,18 @@
-import React, { FC } from 'react';
-import './ThreeBox.css';
+import React, { FC } from "react";
+import "./ThreeBox.css";
 
-import { Canvas, applyProps, useFrame } from '@react-three/fiber';
-import { PerformanceMonitor, AccumulativeShadows, RandomizedLight, Environment, Lightformer, Float, useGLTF, OrbitControls } from '@react-three/drei';
-import { LayerMaterial, Color, Depth } from 'lamina';
+import { Canvas, applyProps, useFrame } from "@react-three/fiber";
+import {
+  PerformanceMonitor,
+  AccumulativeShadows,
+  RandomizedLight,
+  Environment,
+  Lightformer,
+  Float,
+  useGLTF,
+  OrbitControls,
+} from "@react-three/drei";
+import { LayerMaterial, Color, Depth } from "lamina";
 
 interface ThreeBoxProps {}
 
