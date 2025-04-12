@@ -5,7 +5,7 @@ import ThreeBox from "./components/ThreeBox/ThreeBox";
 import Intro from "./components/Intro/Intro";
 import BentoGrid from "./components/BentoGrid/BentoGrid";
 import Marquee from "./components/Marquee/Marquee";
-import Skills from "./components/Skills/Skills"
+import Skills from "./components/Skills/Skills";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import DGA from "./pages/DGA";
@@ -18,12 +18,18 @@ function App() {
           path="/"
           element={
             <>
-              <NavBar />
-              <Marquee />
+              <div className="w-[80%] mx-auto">
+                <NavBar />
+              </div>
+              <div className="w-[80%] mx-auto">
+                <Marquee />
+              </div>
               <ThreeBox />
-              <Intro />
-              <Skills />
-              <BentoGrid />
+              <div className="w-[80%] mx-auto">
+                <Intro />
+                <Skills />
+                <BentoGrid />
+              </div>
               <Footer />
             </>
           }
