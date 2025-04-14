@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 interface IntroProps {}
 
 const Intro: FC<IntroProps> = () => (
-  <div className="">
+  <div>
     <div className="container mx-auto flex justify-between items-start mt-50">
       <div className="ml-4 text-left">
         <h2
@@ -33,7 +33,7 @@ const Intro: FC<IntroProps> = () => (
             Amherst - February 2025 - Present
           </p>
           <p className="text-white">
-            Undergraduate Research Volunteer - December 2024 - February 2025
+            Research Intern - December 2024 - February 2025
           </p>
           <p className="text-white">
             Technical Instructor - June 2024 - August 2024
