@@ -6,7 +6,7 @@ interface SkillsProps {}
 
 const Skills: FC<SkillsProps> = () => {
   return (
-    <div className="mt-50 justify-center items-center text-neutral-200">
+    <div className="mt-50 justify-center items-center text-neutral-200 w-[70%] mx-auto">
         <h1 className="mb-5 text-left">Tech Stack</h1>
         <hr className="border-t-2 border-gray-500 mb-10"/>
         <div>

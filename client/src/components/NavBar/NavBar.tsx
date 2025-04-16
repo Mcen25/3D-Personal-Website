@@ -24,7 +24,7 @@ const navigation = [
 
 const NavBar: FC<NavBarProps> = () => {
   return (
-    <div className="NavBar mt-5">
+    <div className="mt-5 w-[70%] mx-auto ">
       <div className="container mx-auto flex justify-between items-center">
         <div className="ml-4 text-left">
           <h2
