@@ -13,7 +13,7 @@ const cardMotionProps = {
 
 const BentoGrid = () => (
   <div>
-    <div className="mt-50 w-[70%] mx-auto">
+    <div className="mt-50 w-[60%] mx-auto">
       <h1 className="mb-5 text-white text-left">Projects</h1>
       <hr className="border-t-2 border-gray-500" />
     </div>

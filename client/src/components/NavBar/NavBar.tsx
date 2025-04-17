@@ -8,7 +8,7 @@ interface NavBarProps {}
 const NavBar: FC<NavBarProps> = () => {
   return (
     <div className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-[rgb(17,17,17)]/75 py-3">
-      <div className="w-[56%] mx-auto border-b-2 border-gray-500">
+      <div className="w-[60%] mx-auto border-b-2 border-gray-500">
         <div className="container mx-auto flex justify-between items-center py-3">
           <div className="flex-1 text-left ml-4">
             <h2

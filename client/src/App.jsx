@@ -18,14 +18,14 @@ function App() {
           path="/"
           element={
             <>
-              <div className="w-[80%] mx-auto">
+              <div className="mx-auto">
                 <NavBar />
               </div>
-              <div className="w-[80%] mx-auto">
+              <div className="mx-auto">
                 <Marquee />
               </div>
               <ThreeBox />
-              <div className="w-[80%] mx-auto">
+              <div className=" mx-auto">
                 <Intro />
                 <Skills />
                 <BentoGrid />

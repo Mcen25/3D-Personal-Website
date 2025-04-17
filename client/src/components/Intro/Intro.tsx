@@ -6,7 +6,7 @@ interface IntroProps {}
 
 const Intro: FC<IntroProps> = () => (
   <div>
-    <div className="container mx-auto flex justify-between items-start mt-50 w-[70%]">
+    <div className="container mx-auto flex justify-between items-start mt-50 w-[60%]">
       <div className="ml-4 text-left">
         <h2
           className="text-white text-base font-medium"

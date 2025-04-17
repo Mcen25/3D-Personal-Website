@@ -1,14 +1,14 @@
 import React, { FC } from "react";
-import "./Footer.css"; // Ensure Footer.css doesn't contain conflicting width/margin styles
+import "./Footer.css";
 import { Github, Linkedin } from "lucide-react";
 
 interface FooterProps {}
 
 const Footer: FC<FooterProps> = () => (
-  <div className="Footer rounded-lg w-[70%] mx-auto mt-20 mb-10">
-    <div className="footer-container border border-white rounded-lg w-[70%] mx-auto ">
-      <div className="flex flex-col md:flex-row justify-between items-start w-[70%] mx-auto ">
-        <div className="footer-section text-left mb-4 md:mb-0">
+  <div className="rounded-lg mt-20 mb-10">
+    <div className="border border-white rounded-lg w-[60%] mx-auto px-4 py-8 min-h-[200px] bg-[rgb(17,17,17)]">
+      <div className="flex flex-col md:flex-row justify-between items-start md:justify-center md:space-x-8 md:items-start">
+        <div className="footer-section text-left mb-4 md:mb-0 ">
           <h3 className="font-bold mb-2">Contact</h3>
           <p>Email: matthew.en.c@gmail.com</p>
         </div>
