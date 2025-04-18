@@ -9,6 +9,8 @@ import Skills from "./components/Skills/Skills";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import DGA from "./pages/DGA";
+import TamaTask from "./pages/TamaTask";
+import ResearchAssistant from "./pages/ResearchAssistant";
 
 function App() {
   return (
@@ -18,24 +20,19 @@ function App() {
           path="/"
           element={
             <>
-              <div className="mx-auto">
-                <NavBar />
-              </div>
-              <div className="mx-auto">
-                <Marquee />
-              </div>
+              <NavBar />
+              <Marquee />
               <ThreeBox />
-              <div className=" mx-auto">
-                <Intro />
-                <Skills />
-                <BentoGrid />
-              </div>
+              <Intro />
+              <Skills />
+              <BentoGrid />
               <Footer />
             </>
           }
         />
-        <Route path="/dga" element={<DGA />} />
-        <Route path="/research" />
+        <Route path="/DGA" element={<DGA />} />
+        <Route path="/TamaTask" element={<TamaTask />} />
+        <Route path="/ResearchAssistant" element={<ResearchAssistant />}/>
         <Route path="/" />
       </Routes>
     </Router>
