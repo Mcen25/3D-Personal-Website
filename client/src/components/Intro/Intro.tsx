@@ -17,7 +17,7 @@ const Intro: FC<IntroProps> = () => (
         <p className="mt-2">
           Hi, I'm Matthew En---a newly graduated computer science student at the
           University of Massachusetts Amherst with a passion of building
-          creative solutions.
+          creative solutions. I like to develop web applications, games, and robots!
         </p>
       </div>
       <div className="ml-4 text-left">

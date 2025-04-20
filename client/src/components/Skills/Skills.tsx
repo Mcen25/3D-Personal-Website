@@ -84,7 +84,7 @@ const Skills: FC<SkillsProps> = () => {
       <hr className="border-t-2 border-gray-500 mb-10"/>
       
       <div className="relative ">
-        <div className="grid grid-cols-1 lg:grid-cols-3 border rounded-md dark:border-neutral-800 bg-[rgb(17,17,17)]">
+        <div className="grid grid-cols-1 lg:grid-cols-3 border-2 rounded-md dark:border-neutral-800 bg-[rgb(17,17,17)]">
           {skillsFeatures.map((feature) => (
             <FeatureCard key={feature.title} className={feature.className}>
               <FeatureTitle>{feature.title}</FeatureTitle>
