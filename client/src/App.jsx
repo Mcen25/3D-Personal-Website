@@ -30,10 +30,9 @@ function App() {
             </>
           }
         />
-        <Route path="/DGA" element={<DGA />} />
+        <Route path="/dga" element={<DGA />} />
         <Route path="/TamaTask" element={<TamaTask />} />
-        <Route path="/ResearchAssistant" element={<ResearchAssistant />}/>
-        <Route path="/" />
+        <Route path="/ResearchAssistant" element={<ResearchAssistant />} />
       </Routes>
     </Router>
   );
