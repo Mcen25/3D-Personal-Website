@@ -55,11 +55,14 @@ const BentoGrid = () => (
                   
 
                   <CardItem
-                    as="p"
                     translateZ="60"
-                    className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300 text-left"
+                    className="w-full mt-5"
                   >
-                    Tech: Unity Engine, Fishnet Networking, and Steamworks.
+                    <div className="flex justify-center items-center">
+                      <img src="/images/unity-69.svg" alt="Unity" className="h-10 mx-4" />
+                      <img src="/images/steam-icon-logo.svg" alt="Python" className="h-10 mx-4" />
+                      <img src="/images/c--4.svg" alt="C#" className="h-10 mx-4" />
+                    </div>
                   </CardItem>
                 </CardBody>
             </CardContainer>
@@ -134,6 +137,18 @@ const BentoGrid = () => (
                     alt="thumbnail"
                   />
                 </CardItem>
+
+                <CardItem
+                    translateZ="60"
+                    className="w-full mt-5"
+                  >
+                    <div className="flex justify-center items-center">
+                      <img src="/images/aws.svg" alt="AWS" className="h-10 mx-4" />
+                      <img src="/images/react.svg" alt="React" className="h-10 mx-4" />
+                      <img src="/images/react-native-1.svg" alt="ReactNative" className="h-10 mx-4" />
+                      <img src="/images/unity-69.svg" alt="Unity" className="h-10 mx-4" />
+                    </div>
+                  </CardItem>
               </CardBody>
             </Link>
           </CardContainer>

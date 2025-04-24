@@ -49,7 +49,7 @@ const DGA = () => {
           <div className="flex flex-col ml-auto w-[30%]">
             <img
               src="./DGA2.gif"
-              className="h-60 w-full object-cover scale-120 rounded-xl group-hover/card:shadow-xl"
+              className="h-60 w-full object-cover scale-100 rounded-3xl group-hover/card:shadow-xl"
               alt="thumbnail"
             />
           </div>
@@ -57,9 +57,6 @@ const DGA = () => {
           
         </div>
       </div>
-
-      
-
       <Footer />
     </div>
   );
