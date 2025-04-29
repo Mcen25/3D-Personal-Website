@@ -1,31 +1,42 @@
 import React, { FC } from "react";
 import FastMarquee from "react-fast-marquee";
 import "./Skills.css";
+import { motion } from "motion/react";
 
 interface SkillsProps {}
+
+const cardMotionProps = {
+  initial: { opacity: 0, translateY: 50 },
+  whileInView: { opacity: 1, translateY: 0 },
+  transition: { duration: 0.5 },
+  viewport: { once: true, amount: 0.5 },
+};
 
 const SkeletonFrontend = () => (
   <div className="flex justify-center items-center h-full">
     
-    <img src="/images/react.svg" alt="React" className="h-10 mx-4" />
+    <img src="/images/react.svg" alt="React" className="h-10 mx-2" />
+    <img src="/images/next-js2.svg" alt="Next.js" className="h-10 mx-2" />
   </div>
 );
 
 const SkeletonBackend = () => (
-  <div className="flex justify-center items-center h-full">
-    <img src="/images/node.svg" alt="Node" className="h-10 mx-4" />
-    <img src="/images/postgresql.svg" alt="Postgresql" className="h-10 mx-4" />
-    <img src="/images/mongodb.svg" alt="MongoDB" className="h-10 mx-4" />
-    <img src="/images/javascript.svg" alt="JavaScript" className="h-10 mx-4" />
-    <img src="/images/typescript.svg" alt="TypeScript" className="h-10 mx-4" />
+  <div className="flex flex-wrap justify-center items-center h-full">
+    <img src="/images/node.svg" alt="Node" className="h-10 mx-2 my-2" />
+    <img src="/images/postgresql.svg" alt="Postgresql" className="h-10 mx-2 my-2" />
+    <img src="/images/mongodb.svg" alt="MongoDB" className="h-10 mx-2 my-2" />
+    <img src="/images/javascript.svg" alt="JavaScript" className="h-10 mx-2 my-2" />
+    <img src="/images/typescript.svg" alt="TypeScript" className="h-10 mx-2 my-2" />
+    <img src="/images/aws.svg" alt="AWS" className="h-10 mx-2" />
   </div>
 );
 
 const SkeletonOtherTools = () => (
   <div className="flex justify-center items-center h-full">
-    <img src="/images/java.svg" alt="Java" className="h-10 mx-4" />
-    <img src="/images/python.svg" alt="Python" className="h-10 mx-4" />
-    <img src="/images/tensorflow.svg" alt="TensorFlow" className="h-10 mx-4" />
+    <img src="/images/java.svg" alt="Java" className="h-10 mx-2" />
+    <img src="/images/python.svg" alt="Python" className="h-10 mx-2" />
+    <img src="/images/tensorflow.svg" alt="TensorFlow" className="h-10 mx-2" />
+    <img src="/images/unity-69.svg" alt="Unity" className="h-10 mx-2" />
   </div>
 );
 
@@ -83,6 +94,7 @@ const Skills: FC<SkillsProps> = () => {
       <h1 className="mb-5 text-left">Tech Stack</h1>
       <hr className="border-t-2 border-gray-500 mb-10"/>
       
+      <motion.div {...cardMotionProps}>
       <div className="relative ">
         <div className="grid grid-cols-1 lg:grid-cols-3 border-2 rounded-md dark:border-neutral-800 bg-[rgb(17,17,17)]">
           {skillsFeatures.map((feature) => (
@@ -93,7 +105,10 @@ const Skills: FC<SkillsProps> = () => {
             </FeatureCard>
           ))}
         </div>
-      </div>
+        </div>
+      </motion.div>
+     
+      
     </div>
   );
 };
