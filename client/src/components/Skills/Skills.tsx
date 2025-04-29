@@ -12,31 +12,52 @@ const cardMotionProps = {
   viewport: { once: true, amount: 0.5 },
 };
 
+const SkillIcon = ({ src, alt }: { src: string; alt: string }) => (
+  <div className="relative group flex items-center">
+    <img
+      src={src}
+      alt={alt}
+      className="h-10 mx-2 my-1"
+    />
+    <span className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 rounded bg-gray-100 text-black text-xs opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10 whitespace-nowrap">
+      {alt}
+    </span>
+    <svg
+      className="absolute -top-2 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10"
+      width="16"
+      height="8"
+      viewBox="0 0 16 8"
+      fill="none"
+    >
+      <polygon points="8,8 0,0 16,0" fill="#f3f4f6" />
+    </svg>
+  </div>
+);
+
 const SkeletonFrontend = () => (
   <div className="flex justify-center items-center h-full">
-    
-    <img src="/images/react.svg" alt="React" className="h-10 mx-2" />
-    <img src="/images/next-js2.svg" alt="Next.js" className="h-10 mx-2" />
+    <SkillIcon src="/images/react.svg" alt="React" />
+    <SkillIcon src="/images/next-js2.svg" alt="Next.js" />
   </div>
 );
 
 const SkeletonBackend = () => (
   <div className="flex flex-wrap justify-center items-center h-full">
-    <img src="/images/node.svg" alt="Node" className="h-10 mx-2 my-2" />
-    <img src="/images/postgresql.svg" alt="Postgresql" className="h-10 mx-2 my-2" />
-    <img src="/images/mongodb.svg" alt="MongoDB" className="h-10 mx-2 my-2" />
-    <img src="/images/javascript.svg" alt="JavaScript" className="h-10 mx-2 my-2" />
-    <img src="/images/typescript.svg" alt="TypeScript" className="h-10 mx-2 my-2" />
-    <img src="/images/aws.svg" alt="AWS" className="h-10 mx-2" />
+    <SkillIcon src="/images/node.svg" alt="Node" />
+    <SkillIcon src="/images/postgresql.svg" alt="Postgresql" />
+    <SkillIcon src="/images/mongodb.svg" alt="MongoDB" />
+    <SkillIcon src="/images/javascript.svg" alt="JavaScript" />
+    <SkillIcon src="/images/typescript.svg" alt="TypeScript" />
+    <SkillIcon src="/images/aws.svg" alt="AWS" />
   </div>
 );
 
 const SkeletonOtherTools = () => (
   <div className="flex justify-center items-center h-full">
-    <img src="/images/java.svg" alt="Java" className="h-10 mx-2" />
-    <img src="/images/python.svg" alt="Python" className="h-10 mx-2" />
-    <img src="/images/tensorflow.svg" alt="TensorFlow" className="h-10 mx-2" />
-    <img src="/images/unity-69.svg" alt="Unity" className="h-10 mx-2" />
+    <SkillIcon src="/images/java.svg" alt="Java" />
+    <SkillIcon src="/images/python.svg" alt="Python" />
+    <SkillIcon src="/images/tensorflow.svg" alt="TensorFlow" />
+    <SkillIcon src="/images/unity-69.svg" alt="Unity" />
   </div>
 );
 
