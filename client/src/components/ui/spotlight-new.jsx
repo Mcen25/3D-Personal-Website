@@ -1,5 +1,4 @@
-"use client";
-
+"use client";;
 import React from "react";
 import { motion } from "motion/react";
 
@@ -25,18 +24,17 @@ export const Spotlight = ({
       transition={{
         duration: 1.5,
       }}
-      style={{ willChange: "opacity" }}
       className="pointer-events-none absolute inset-0 h-full w-full">
       <motion.div
-        initial={{ x: 0 }}
         animate={{
           x: [0, xOffset, 0],
         }}
         transition={{
           duration,
+          repeat: Infinity,
+          repeatType: "reverse",
           ease: "easeInOut",
         }}
-        style={{ willChange: "transform" }}
         className="absolute top-0 left-0 w-screen h-screen z-40 pointer-events-none">
         <div
           style={{
@@ -44,7 +42,6 @@ export const Spotlight = ({
             background: gradientFirst,
             width: `${width}px`,
             height: `${height}px`,
-            willChange: "transform",
           }}
           className={`absolute top-0 left-0`} />
 
@@ -54,7 +51,6 @@ export const Spotlight = ({
             background: gradientSecond,
             width: `${smallWidth}px`,
             height: `${height}px`,
-            willChange: "transform",
           }}
           className={`absolute top-0 left-0 origin-top-left`} />
 
@@ -64,20 +60,19 @@ export const Spotlight = ({
             background: gradientThird,
             width: `${smallWidth}px`,
             height: `${height}px`,
-            willChange: "transform",
           }}
           className={`absolute top-0 left-0 origin-top-left`} />
       </motion.div>
       <motion.div
-        initial={{ x: 0 }}
         animate={{
           x: [0, -xOffset, 0],
         }}
         transition={{
           duration,
+          repeat: Infinity,
+          repeatType: "reverse",
           ease: "easeInOut",
         }}
-        style={{ willChange: "transform" }}
         className="absolute top-0 right-0 w-screen h-screen z-40 pointer-events-none">
         <div
           style={{
@@ -85,7 +80,6 @@ export const Spotlight = ({
             background: gradientFirst,
             width: `${width}px`,
             height: `${height}px`,
-            willChange: "transform",
           }}
           className={`absolute top-0 right-0`} />
 
@@ -95,7 +89,6 @@ export const Spotlight = ({
             background: gradientSecond,
             width: `${smallWidth}px`,
             height: `${height}px`,
-            willChange: "transform",
           }}
           className={`absolute top-0 right-0 origin-top-right`} />
 
@@ -105,7 +98,6 @@ export const Spotlight = ({
             background: gradientThird,
             width: `${smallWidth}px`,
             height: `${height}px`,
-            willChange: "transform",
           }}
           className={`absolute top-0 right-0 origin-top-right`} />
       </motion.div>

@@ -25,7 +25,6 @@ function App() {
           element={
             <>
               <NavBar />
-              {/* <Marquee /> */}
               <div className=" p-2 max-w-7xl  mx-auto relative z-10 mt-40 w-full pt-20 md:pt-0">
                 <Spotlight translateY={-500}/> 
                 <h1 className="text-4xl md:text-7xl font-bold text-center text-white">
