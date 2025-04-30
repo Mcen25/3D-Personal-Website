@@ -4,6 +4,7 @@ import Footer from "./components/Footer/Footer";
 import ThreeBox from "./components/ThreeBox/ThreeBox";
 import Intro from "./components/Intro/Intro";
 import Marquee from "./components/Marquee/Marquee";
+import { Analytics } from "@vercel/analytics/react"
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import DGA from "./pages/DGA";
@@ -49,6 +50,7 @@ function App() {
         <Route path="/tamatask" element={<TamaTask />} />
         <Route path="/ResearchAssistant" element={<ResearchAssistant />} />
       </Routes>
+      <Analytics/>
     </Router>
   );
 }
