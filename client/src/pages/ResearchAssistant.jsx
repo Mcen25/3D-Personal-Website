@@ -15,7 +15,7 @@ const ResearchAssistant = () => (
           </h1>
         </div>
         <img
-          src="./ThumbnailImage.png"
+          src="./daros_small.jpg"
           alt="DGA Thumbnail"
           className="mt-8 w-[60%] object-contain rounded-2xl"
         />
@@ -23,36 +23,28 @@ const ResearchAssistant = () => (
         <div className="mt-20 w-[60%] flex">
           <div className="w-[70%] items-start">
             <p className="text-white text-left leading-relaxed tracking-wide">
-              Don't Go Alone is a multiplayer game that utilizes Pixelization,
-              Fishnet peer-to-peer networking, and Unity 3D-engine. The game
-              allows players to connect with each other and explore a virtual
-              world together, enhancing the gaming experience through
-              collaboration and interaction.
+            Conducted research in legged robotics in collaboration with graduate researchers, focusing on simulation-based testing and reinforcement learning. Utilized MuJoCo, NVIDIA Isaac Gym, and NVIDIA Isaac Lab to develop, evaluate, and optimize robotic locomotion models and control policies.
             </p>
 
             <div className="mt-8 w-[70%] flex justify-between mx-auto">
               <div className="w-1/4 text-center">
                 <h3 className="text-xl font-bold text-white">Role</h3>
-                <p className="text-white">Lead Programmer</p>
-              </div>
-              <div className="w-1/4 text-center">
-                <h3 className="text-xl font-bold text-white">Collaborators</h3>
-                <p className="text-white">Steven Lam</p>
+                <p className="text-white">Research Assistant</p>
               </div>
               <div className="w-1/4 text-center">
                 <h3 className="text-xl font-bold text-white">Duration</h3>
-                <p className="text-white">July 2024 - Present</p>
+                <p className="text-white">Feburary 2025 - Present</p>
               </div>
             </div>
             
           </div>
-          <div className="flex flex-col ml-auto w-[30%]">
+          {/* <div className="flex flex-col ml-auto w-[30%]">
             <img
               src="./DGA2.gif"
               className="h-60 w-full object-cover scale-100 rounded-3xl group-hover/card:shadow-xl"
               alt="thumbnail"
             />
-          </div>
+          </div> */}
 
           
         </div>

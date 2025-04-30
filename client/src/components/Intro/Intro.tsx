@@ -15,9 +15,9 @@ const Intro: FC<IntroProps> = () => (
           About
         </h2>
         <p className="mt-2">
-          Hi, I'm Matthew En---a newly graduated computer science student at the
+          Hi, I'm Matthew En---a newly graduated computer science student from the
           University of Massachusetts Amherst with a passion of building
-          creative solutions. I like to develop web applications, games, and robots!
+          creative solutions. I develop web applications, games, and robots!
         </p>
       </div>
       <div className="ml-4 text-left">

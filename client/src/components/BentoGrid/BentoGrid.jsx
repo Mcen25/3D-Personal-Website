@@ -20,7 +20,7 @@ const BentoGrid = () => (
     </div>
 
     <div className="flex items-center justify-center bg-[rgb(17,17,17)] rounded-xl">
-      <div className="grid grid-cols-3 auto-rows gap-10">
+    <div className="grid grid-cols-1 md:grid-cols-3 auto-rows gap-10">
 
       <motion.div {...cardMotionProps}>
             <CardContainer className="inter-var col-span-1 row-span-1 border-2 border-white rounded-2xl">
@@ -136,7 +136,7 @@ const BentoGrid = () => (
                 <Link to="/ResearchAssistant" className="block">
                   <CardItem translateZ="100" className="w-full mt-4">
                     <img
-                      src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      src="daros_small.jpg"
                       height="1000"
                       width="1000"
                       className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
@@ -145,14 +145,14 @@ const BentoGrid = () => (
                   </CardItem>
                 </Link>
                 <CardItem translateZ="100" className="w-full mt-4">
-                <a
+                {/* <a
                   href="https://github.com/yourusername/repository" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-block"
                 >
                 <Github size={20} />
-                </a>
+                </a> */}
               </CardItem>
             </CardBody>
           </CardContainer>
