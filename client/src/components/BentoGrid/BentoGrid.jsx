@@ -43,7 +43,7 @@ const BentoGrid = () => (
                     <CardItem translateZ="100" className="w-full mt-4">
                       <div className="rounded-xl overflow-hidden">
                         <img
-                          src="./DGA2.gif"
+                          src="./TamaTask.png"
                           height="1000"
                           width="1000" 
                           className="h-60 w-full object-cover scale-120 group-hover/card:shadow-xl"
