@@ -47,7 +47,7 @@ function App() {
           }
         />
         <Route path="/dga" element={<DGA />} />
-        <Route path="/tamatask" element={<TamaTask />} />
+        <Route path="/tamabits" element={<TamaTask />} />
         <Route path="/ResearchAssistant" element={<ResearchAssistant />} />
       </Routes>
       <Analytics/>

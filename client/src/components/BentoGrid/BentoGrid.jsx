@@ -30,7 +30,7 @@ const BentoGrid = () => (
                     translateZ="50"
                     className="text-xl font-bold text-neutral-500 dark:text-white text-left"
                   >
-                    TamaTask
+                    TamaBits
                   </CardItem>
                   <CardItem
                     as="p"
@@ -39,11 +39,11 @@ const BentoGrid = () => (
                   >
                     A web and mobile application dedicated to making better habits.
                   </CardItem>
-                  <Link to="/tamatask" className="block">
+                  <Link to="/tamabits" className="block">
                     <CardItem translateZ="100" className="w-full mt-4">
                       <div className="rounded-xl overflow-hidden">
                         <img
-                          src="./TamaTask.png"
+                          src="./TamaBits.png"
                           height="1000"
                           width="1000" 
                           className="h-60 w-full object-cover scale-120 group-hover/card:shadow-xl"

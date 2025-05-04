@@ -10,12 +10,12 @@ const TamaTask = () => (
         <div className="text-left mt-20 w-[60%]">
           <h1>
             <span className="text-2xl font-bold text-white">
-              TamaTask – IOS and WebApp
+              TamaBits – IOS and WebApp
             </span>
           </h1>
         </div>
         <img
-          src="./TamaTask.png"
+          src="./TamaBits.png"
           alt="DGA Thumbnail"
           className="mt-8 w-[60%] object-contain rounded-2xl"
         />
