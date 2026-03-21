@@ -15,9 +15,10 @@ const Intro: FC<IntroProps> = () => (
           About
         </h2>
         <p className="mt-2">
-          Hi, I'm Matthew En---a newly graduated computer science student from the
-          University of Massachusetts Amherst with a passion of building
-          creative solutions. I develop web applications, games, and robots!
+          Hi, I'm Matthew En---a computer science graduate from the
+          University of Massachusetts Amherst. I'm currently a Robotics
+          Software Engineer programming humanoid robots, with a passion for
+          robotics and games!
         </p>
       </div>
       <div className="ml-4 text-left">
@@ -29,14 +30,13 @@ const Intro: FC<IntroProps> = () => (
         </h2>
         <div className="space-y-2 mt-2">
           <p className="text-white">
-            Research Assistant @DARoS Lab at the University of Massachusetts
-            Amherst - February 2025 - Present
+            Robotics Software Engineer @AlphaZ - October 2025 - Present
           </p>
           <p className="text-white">
-            Research Intern - December 2024 - February 2025
+            Research Assistant @DARoS Lab at UMass Amherst - February 2025 - September 2025
           </p>
           <p className="text-white">
-            Technical Instructor - June 2024 - August 2024
+            Research Volunteer @SCALAR Lab - December 2024 - February 2025
           </p>
         </div>
       </div>

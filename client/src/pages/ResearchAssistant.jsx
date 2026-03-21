@@ -33,7 +33,7 @@ const ResearchAssistant = () => (
               </div>
               <div className="w-1/4 text-center">
                 <h3 className="text-xl font-bold text-white">Duration</h3>
-                <p className="text-white">Feburary 2025 - Present</p>
+                <p className="text-white">February 2025 - September 2025</p>
               </div>
             </div>
             

@@ -1,5 +1,4 @@
 import React, { FC } from "react";
-import FastMarquee from "react-fast-marquee";
 import "./Skills.css";
 import { motion } from "motion/react";
 
@@ -34,50 +33,59 @@ const SkillIcon = ({ src, alt }: { src: string; alt: string }) => (
   </div>
 );
 
-const SkeletonFrontend = () => (
-  <div className="flex justify-center items-center h-full">
-    <SkillIcon src="/images/react.svg" alt="React" />
-    <SkillIcon src="/images/next-js2.svg" alt="Next.js" />
+const TextBadge = ({ label }: { label: string }) => (
+  <span className="mx-2 my-1 px-3 py-1 rounded-md bg-neutral-800 text-neutral-200 text-xs font-medium border border-neutral-700 whitespace-nowrap">
+    {label}
+  </span>
+);
+
+const SkeletonRobotics = () => (
+  <div className="flex flex-wrap justify-center items-center h-full gap-1">
+    <TextBadge label="ROS 2" />
+    <TextBadge label="Isaac Lab" />
+    <TextBadge label="Isaac Sim" />
+    <TextBadge label="MuJoCo" />
+    <TextBadge label="Isaac Gym" />
   </div>
 );
 
-const SkeletonBackend = () => (
+const SkeletonLanguages = () => (
   <div className="flex flex-wrap justify-center items-center h-full">
-    <SkillIcon src="/images/node.svg" alt="Node" />
-    <SkillIcon src="/images/postgresql.svg" alt="Postgresql" />
-    <SkillIcon src="/images/mongodb.svg" alt="MongoDB" />
+    <SkillIcon src="/images/python.svg" alt="Python" />
+    <SkillIcon src="/images/cplusplus.svg" alt="C++" />
+    <SkillIcon src="/images/java.svg" alt="Java" />
     <SkillIcon src="/images/javascript.svg" alt="JavaScript" />
-    <SkillIcon src="/images/typescript.svg" alt="TypeScript" />
-    <SkillIcon src="/images/aws.svg" alt="AWS" />
+    <SkillIcon src="/images/c--4.svg" alt="C#" />
   </div>
 );
 
-const SkeletonOtherTools = () => (
-  <div className="flex justify-center items-center h-full">
-    <SkillIcon src="/images/java.svg" alt="Java" />
-    <SkillIcon src="/images/python.svg" alt="Python" />
-    <SkillIcon src="/images/tensorflow.svg" alt="TensorFlow" />
+const SkeletonTools = () => (
+  <div className="flex flex-wrap justify-center items-center h-full">
+    <SkillIcon src="/images/pytorch.svg" alt="PyTorch" />
     <SkillIcon src="/images/unity-69.svg" alt="Unity" />
+    <SkillIcon src="/images/linux.svg" alt="Linux" />
+    <SkillIcon src="/images/git.svg" alt="Git" />
+    <SkillIcon src="/images/blender.svg" alt="Blender" />
   </div>
 );
 
 const skillsFeatures = [
   {
-    title: "Frontend Technology",
-    description: "Building responsive and interactive user interfaces.",
-    skeleton: <SkeletonFrontend />,
+    title: "Robotics & Simulation",
+    description: "Building and testing robotic systems in simulation and on hardware.",
+    skeleton: <SkeletonRobotics />,
     className: "col-span-1 border-r dark:border-neutral-800",
   },
   {
-    title: "Backend Technology",
-    description: "Developing robust server-side logic and databases.",
-    skeleton: <SkeletonBackend />,
+    title: "Languages",
+    description: "Programming languages used across robotics, systems, and web.",
+    skeleton: <SkeletonLanguages />,
     className: "col-span-1 border-r dark:border-neutral-800",
   },
   {
-    title: "Other Tools & Languages",
-    description: "Utilizing various tools for development and data science.",
-    skeleton: <SkeletonOtherTools />,
+    title: "Tools & Frameworks",
+    description: "ML, game development, and developer tooling.",
+    skeleton: <SkeletonTools />,
     className: "col-span-1",
   },
 ];
@@ -114,7 +122,7 @@ const Skills: FC<SkillsProps> = () => {
     <div className="mt-50 justify-center items-center text-neutral-200 w-[60%] mx-auto">
       <h1 className="mb-5 text-left">Tech Stack</h1>
       <hr className="border-t-2 border-gray-500 mb-10"/>
-      
+
       <motion.div {...cardMotionProps}>
       <div className="relative ">
         <div className="grid grid-cols-1 lg:grid-cols-3 border-2 rounded-md dark:border-neutral-800 bg-[rgb(17,17,17)]">
@@ -128,8 +136,8 @@ const Skills: FC<SkillsProps> = () => {
         </div>
         </div>
       </motion.div>
-     
-      
+
+
     </div>
   );
 };

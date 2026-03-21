@@ -32,7 +32,7 @@ function App() {
                   Matthew En <br />
                 </h1>
                 <p className="mt-4 font-normal text-base text-neutral-300 max-w-lg text-center mx-auto">
-                Aspiring software engineer, passionate full-stack developer, and lifelong learner.
+                Robotics Software Engineer. Building humanoid robots.
                 </p>
               </div>
               <Intro />

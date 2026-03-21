@@ -8,15 +8,15 @@ const Marquee: FC<MarqueeProps> = () => (
   <div className="mt-20 flex flex-col justify-center items-center text-neutral-200">
     <div className="w-[60%] flex flex-col">
       <FastMarquee gradient={true} gradientColor="rgb(17,17,17)" speed={20}>
-        <span className="px-6 marquee-text">Research Assistant</span>
+        <span className="px-6 marquee-text">Robotics Software Engineer</span>
         <span className="px-6 marquee-text">Robotics</span>
         <span className="px-6 marquee-text">Game Developer</span>
         <span className="px-6 marquee-text">React</span>
 
         <span className="px-6 marquee-text">Bachelors in CS</span>
-        <span className="px-6 marquee-text">Robotics</span>
-        <span className="px-6 marquee-text">Game Developer</span>
-        <span className="px-6 marquee-text">React</span>
+        <span className="px-6 marquee-text">ROS 2</span>
+        <span className="px-6 marquee-text">Humanoid Robots</span>
+        <span className="px-6 marquee-text">Reinforcement Learning</span>
 
         <span className="px-6 marquee-text">Research Assistant</span>
         <span className="px-6 marquee-text">Robotics</span>
