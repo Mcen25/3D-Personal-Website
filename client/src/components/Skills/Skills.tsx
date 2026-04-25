@@ -1,144 +1,114 @@
 import React, { FC } from "react";
-import "./Skills.css";
 import { motion } from "motion/react";
 
 interface SkillsProps {}
 
-const cardMotionProps = {
-  initial: { opacity: 0, translateY: 50 },
-  whileInView: { opacity: 1, translateY: 0 },
-  transition: { duration: 0.5 },
-  viewport: { once: true, amount: 0.5 },
+const fadeUp = {
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, amount: 0.3 },
+  transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] },
 };
 
-const SkillIcon = ({ src, alt }: { src: string; alt: string }) => (
-  <div className="relative group flex items-center">
-    <img
-      src={src}
-      alt={alt}
-      className="h-10 mx-2 my-1"
-    />
-    <span className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 rounded bg-gray-100 text-black text-xs opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10 whitespace-nowrap">
-      {alt}
-    </span>
-    <svg
-      className="absolute -top-2 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10"
-      width="16"
-      height="8"
-      viewBox="0 0 16 8"
-      fill="none"
-    >
-      <polygon points="8,8 0,0 16,0" fill="#f3f4f6" />
-    </svg>
-  </div>
-);
-
-const TextBadge = ({ label }: { label: string }) => (
-  <span className="mx-2 my-1 px-3 py-1 rounded-md bg-neutral-800 text-neutral-200 text-xs font-medium border border-neutral-700 whitespace-nowrap">
+const Badge = ({ label }: { label: string }) => (
+  <span
+    className="px-3 py-1 text-xs text-neutral-400 bg-neutral-900 border border-neutral-800 rounded-full hover:border-neutral-600 hover:text-white transition-all duration-200 cursor-default whitespace-nowrap"
+    style={{ fontFamily: "Inter, sans-serif" }}
+  >
     {label}
   </span>
 );
 
-const SkeletonRobotics = () => (
-  <div className="flex flex-wrap justify-center items-center h-full gap-1">
-    <TextBadge label="ROS 2" />
-    <TextBadge label="Isaac Lab" />
-    <TextBadge label="Isaac Sim" />
-    <TextBadge label="MuJoCo" />
-    <TextBadge label="Isaac Gym" />
+const SkillIcon = ({ src, alt }: { src: string; alt: string }) => (
+  <div className="relative group flex items-center justify-center p-2 rounded-lg hover:bg-neutral-800/60 transition-colors duration-200 cursor-default">
+    <img
+      src={src}
+      alt={alt}
+      className="h-7 w-7 object-contain opacity-60 group-hover:opacity-100 transition-opacity duration-200"
+    />
+    <span className="absolute -top-9 left-1/2 -translate-x-1/2 px-2 py-1 rounded-md bg-neutral-800 text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10 whitespace-nowrap border border-neutral-700">
+      {alt}
+    </span>
   </div>
 );
 
-const SkeletonLanguages = () => (
-  <div className="flex flex-wrap justify-center items-center h-full">
-    <SkillIcon src="/images/python.svg" alt="Python" />
-    <SkillIcon src="/images/cplusplus.svg" alt="C++" />
-    <SkillIcon src="/images/java.svg" alt="Java" />
-    <SkillIcon src="/images/javascript.svg" alt="JavaScript" />
-    <SkillIcon src="/images/c--4.svg" alt="C#" />
-  </div>
-);
-
-const SkeletonTools = () => (
-  <div className="flex flex-wrap justify-center items-center h-full">
-    <SkillIcon src="/images/pytorch.svg" alt="PyTorch" />
-    <SkillIcon src="/images/unity-69.svg" alt="Unity" />
-    <SkillIcon src="/images/linux.svg" alt="Linux" />
-    <SkillIcon src="/images/git.svg" alt="Git" />
-    <SkillIcon src="/images/blender.svg" alt="Blender" />
-  </div>
-);
-
-const skillsFeatures = [
+const skillCategories = [
   {
-    title: "Robotics & Simulation",
+    label: "Robotics & Simulation",
     description: "Building and testing robotic systems in simulation and on hardware.",
-    skeleton: <SkeletonRobotics />,
-    className: "col-span-1 border-r dark:border-neutral-800",
+    content: (
+      <div className="flex flex-wrap gap-2 mt-5">
+        <Badge label="ROS 2" />
+        <Badge label="Isaac Lab" />
+        <Badge label="Isaac Sim" />
+        <Badge label="MuJoCo" />
+        <Badge label="Isaac Gym" />
+      </div>
+    ),
   },
   {
-    title: "Languages",
+    label: "Languages",
     description: "Programming languages used across robotics, systems, and web.",
-    skeleton: <SkeletonLanguages />,
-    className: "col-span-1 border-r dark:border-neutral-800",
+    content: (
+      <div className="flex flex-wrap gap-0.5 mt-5">
+        <SkillIcon src="/images/python.svg" alt="Python" />
+        <SkillIcon src="/images/cplusplus.svg" alt="C++" />
+        <SkillIcon src="/images/java.svg" alt="Java" />
+        <SkillIcon src="/images/javascript.svg" alt="JavaScript" />
+        <SkillIcon src="/images/c--4.svg" alt="C#" />
+      </div>
+    ),
   },
   {
-    title: "Tools & Frameworks",
+    label: "Tools & Frameworks",
     description: "ML, game development, and developer tooling.",
-    skeleton: <SkeletonTools />,
-    className: "col-span-1",
+    content: (
+      <div className="flex flex-wrap gap-0.5 mt-5">
+        <SkillIcon src="/images/pytorch.svg" alt="PyTorch" />
+        <SkillIcon src="/images/unity-69.svg" alt="Unity" />
+        <SkillIcon src="/images/linux.svg" alt="Linux" />
+        <SkillIcon src="/images/git.svg" alt="Git" />
+        <SkillIcon src="/images/blender.svg" alt="Blender" />
+      </div>
+    ),
   },
 ];
 
-const FeatureCard = ({ children, className }: { children: React.ReactNode; className?: string }) => {
-  const combinedClassName = `p-4 sm:p-8 relative overflow-hidden ${className || ''}`;
-  return (
-    <div className={combinedClassName.trim()}>
-      {children}
-    </div>
-  );
-};
-
-const FeatureTitle = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <p className="max-w-5xl mx-auto text-left tracking-tight text-white text-xl md:text-2xl md:leading-snug">
-      {children}
-    </p>
-  );
-};
-
-const FeatureDescription = ({ children }: { children: React.ReactNode }) => {
-  const combinedClassName = `text-sm md:text-base max-w-4xl text-left mx-auto text-neutral-500 dark:text-neutral-300 text-left max-w-sm mx-0 md:text-sm my-2`;
-  return (
-    <p className={combinedClassName}>
-      {children}
-    </p>
-  );
-};
-
-
 const Skills: FC<SkillsProps> = () => {
   return (
-    <div className="mt-50 justify-center items-center text-neutral-200 w-[60%] mx-auto">
-      <h1 className="mb-5 text-left">Tech Stack</h1>
-      <hr className="border-t-2 border-gray-500 mb-10"/>
+    <section className="mt-32 w-[60%] mx-auto">
+      <motion.div {...fadeUp}>
+        <div className="flex items-center gap-5 mb-12">
+          <p
+            className="text-xs uppercase tracking-[0.35em] text-neutral-500 shrink-0"
+            style={{ fontFamily: "Inter, sans-serif" }}
+          >
+            Tech Stack
+          </p>
+          <div className="flex-1 h-px bg-neutral-800" />
+        </div>
 
-      <motion.div {...cardMotionProps}>
-      <div className="relative ">
-        <div className="grid grid-cols-1 lg:grid-cols-3 border-2 rounded-md dark:border-neutral-800 bg-[rgb(17,17,17)]">
-          {skillsFeatures.map((feature) => (
-            <FeatureCard key={feature.title} className={feature.className}>
-              <FeatureTitle>{feature.title}</FeatureTitle>
-              <FeatureDescription>{feature.description}</FeatureDescription>
-              <div className="h-20 w-full mt-4">{feature.skeleton}</div>
-            </FeatureCard>
+        <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-neutral-800 border border-neutral-800 rounded-2xl overflow-hidden">
+          {skillCategories.map((cat, i) => (
+            <div key={i} className="p-6 bg-[rgb(17,17,17)] hover:bg-neutral-900/50 transition-colors duration-300">
+              <p
+                className="text-white text-sm font-medium"
+                style={{ fontFamily: '"Merriweather", serif' }}
+              >
+                {cat.label}
+              </p>
+              <p
+                className="text-neutral-600 text-xs mt-1.5 leading-relaxed"
+                style={{ fontFamily: "Inter, sans-serif" }}
+              >
+                {cat.description}
+              </p>
+              {cat.content}
+            </div>
           ))}
         </div>
-        </div>
       </motion.div>
-
-
-    </div>
+    </section>
   );
 };
 

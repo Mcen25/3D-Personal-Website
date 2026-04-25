@@ -1,58 +1,132 @@
-import React, { FC } from "react";
-
+import React from "react";
+import { Link } from "react-router-dom";
 import NavBar from "../components/NavBar/NavBar";
 import Footer from "../components/Footer/Footer";
+import { ChevronLeft } from "lucide-react";
+import { motion } from "motion/react";
+
+const meta = [
+  { label: "Role", value: "Lead Programmer" },
+  { label: "Collaborators", value: "Steven Lam" },
+  { label: "Duration", value: "April 2025 – Present" },
+  {
+    label: "Tech",
+    icons: [
+      { src: "/images/unity-69.svg", alt: "Unity" },
+      { src: "/images/next-js2.svg", alt: "Next.js" },
+      { src: "/images/react.svg", alt: "React" },
+      { src: "/images/aws.svg", alt: "AWS" },
+      { src: "/images/dynamodb.svg", alt: "DynamoDB" },
+    ],
+  },
+];
 
 const TamaTask = () => (
   <div>
     <NavBar />
-    <div className="flex flex-col items-center justify-start mx-auto min-h-screen">
-        <div className="text-left mt-20 w-[60%]">
-          <h1>
-            <span className="text-2xl font-bold text-white">
-              TamaBits – IOS and WebApp
-            </span>
-          </h1>
+    <div className="w-[60%] mx-auto pt-28 pb-20">
+
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+      >
+        {/* Back */}
+        <Link
+          to="/"
+          className="inline-flex items-center gap-1 text-neutral-500 text-xs hover:text-white transition-colors duration-200 mb-12"
+          style={{ fontFamily: "Inter, sans-serif" }}
+        >
+          <ChevronLeft size={13} />
+          All Projects
+        </Link>
+
+        {/* Header */}
+        <p
+          className="text-xs uppercase tracking-[0.35em] text-neutral-500 mb-3 text-left"
+          style={{ fontFamily: "Inter, sans-serif" }}
+        >
+          Web & Mobile · 2025
+        </p>
+        <h1
+          className="text-4xl md:text-5xl font-bold text-white leading-tight mb-10 text-left"
+          style={{ fontFamily: '"Merriweather", serif' }}
+        >
+          TamaBits
+        </h1>
+
+        {/* Hero image */}
+        <div className="rounded-2xl overflow-hidden border border-neutral-800">
+          <img
+            src="./TamaBits.png"
+            alt="TamaBits"
+            className="w-full object-cover"
+          />
         </div>
-        <img
-          src="./TamaBits.png"
-          alt="DGA Thumbnail"
-          className="mt-8 w-[60%] object-contain rounded-2xl"
-        />
 
-        <div className="mt-20 w-[60%] flex">
-          <div className="w-[70%] items-start">
-          <p className="text-white text-left leading-relaxed tracking-wide">
-            TamaTask is a cross-platform habit tracking app designed to help you build better routines and stay motivated. Effortlessly log your daily habits, visualize your progress with intuitive charts, and stay engaged with our unique Tamagotchi-inspired virtual pet, built in Unity. As you maintain your habits, your digital companion grows and thrives.
-          </p>
+        {/* Content */}
+        <div className="mt-14 grid grid-cols-1 md:grid-cols-[1fr_220px] gap-14">
 
-            <div className="mt-8 w-[70%] flex justify-between mx-auto">
-              <div className="w-1/4 text-center">
-                <h3 className="text-xl font-bold text-white">Role</h3>
-                <p className="text-white">Lead Programmer</p>
-              </div>
-              <div className="w-1/4 text-center">
-                <h3 className="text-xl font-bold text-white">Collaborators</h3>
-                <p className="text-white">Steven Lam</p>
-              </div>
-              <div className="w-1/4 text-center">
-                <h3 className="text-xl font-bold text-white">Duration</h3>
-                <p className="text-white">April 2025 - Present</p>
-              </div>
+          {/* Description */}
+          <div className="text-left">
+            <p
+              className="text-neutral-400 text-sm leading-[1.9]"
+              style={{ fontFamily: "Inter, sans-serif" }}
+            >
+              TamaBits is a cross-platform habit tracking app designed to help
+              you build better routines and stay motivated. Effortlessly log
+              your daily habits, visualize your progress with intuitive charts,
+              and stay engaged with a unique Tamagotchi-inspired virtual pet
+              built in Unity. As you maintain your habits, your digital
+              companion grows and thrives alongside you.
+            </p>
+            <div className="mt-8 rounded-2xl overflow-hidden border border-neutral-800">
+              <img
+                src="./TamaTask.png"
+                alt="TamaBits interface"
+                className="w-full object-cover"
+              />
             </div>
-            
           </div>
-          {/* <div className="flex flex-col ml-auto w-[30%]">
-            <img
-              src="./DGA2.gif"
-              className="h-60 w-full object-cover scale-100 rounded-3xl group-hover/card:shadow-xl"
-              alt="thumbnail"
-            />
-          </div> */}
 
-          
+          {/* Sidebar metadata */}
+          <div className="flex flex-col gap-6 text-left">
+            {meta.map((item, i) => (
+              <div key={i}>
+                {i > 0 && <div className="h-px bg-neutral-800 mb-6" />}
+                <p
+                  className="text-xs uppercase tracking-[0.3em] text-neutral-600 mb-2"
+                  style={{ fontFamily: "Inter, sans-serif" }}
+                >
+                  {item.label}
+                </p>
+                {item.icons ? (
+                  <div className="flex items-center gap-3 mt-1 flex-wrap">
+                    {item.icons.map((icon, j) => (
+                      <img
+                        key={j}
+                        src={icon.src}
+                        alt={icon.alt}
+                        className="h-5 w-5 object-contain opacity-50 hover:opacity-100 transition-opacity"
+                        title={icon.alt}
+                      />
+                    ))}
+                  </div>
+                ) : (
+                  <p
+                    className="text-white text-sm"
+                    style={{ fontFamily: "Inter, sans-serif" }}
+                  >
+                    {item.value}
+                  </p>
+                )}
+              </div>
+            ))}
+          </div>
+
         </div>
-      </div>
+      </motion.div>
+    </div>
     <Footer />
   </div>
 );

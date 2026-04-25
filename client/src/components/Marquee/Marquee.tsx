@@ -1,29 +1,39 @@
 import React, { FC } from "react";
 import FastMarquee from "react-fast-marquee";
-import "./Marquee.css";
 
 interface MarqueeProps {}
 
+const items = [
+  "Robotics Software Engineer",
+  "ROS 2",
+  "Humanoid Robots",
+  "Game Developer",
+  "Reinforcement Learning",
+  "MuJoCo",
+  "React",
+  "UMass Amherst",
+  "Isaac Lab",
+];
+
 const Marquee: FC<MarqueeProps> = () => (
-  <div className="mt-20 flex flex-col justify-center items-center text-neutral-200">
-    <div className="w-[60%] flex flex-col">
-      <FastMarquee gradient={true} gradientColor="rgb(17,17,17)" speed={20}>
-        <span className="px-6 marquee-text">Robotics Software Engineer</span>
-        <span className="px-6 marquee-text">Robotics</span>
-        <span className="px-6 marquee-text">Game Developer</span>
-        <span className="px-6 marquee-text">React</span>
-
-        <span className="px-6 marquee-text">Bachelors in CS</span>
-        <span className="px-6 marquee-text">ROS 2</span>
-        <span className="px-6 marquee-text">Humanoid Robots</span>
-        <span className="px-6 marquee-text">Reinforcement Learning</span>
-
-        <span className="px-6 marquee-text">Research Assistant</span>
-        <span className="px-6 marquee-text">Robotics</span>
-        <span className="px-6 marquee-text">Game Developer</span>
-        <span className="px-6 marquee-text">React</span>
-      </FastMarquee>
-    </div>
+  <div className="mt-24 w-[60%] mx-auto overflow-hidden">
+    <FastMarquee
+      gradient={true}
+      gradientColor="rgb(17,17,17)"
+      gradientWidth={80}
+      speed={22}
+    >
+      {items.map((text, i) => (
+        <span
+          key={i}
+          className="px-8 text-[10px] uppercase tracking-[0.3em] text-neutral-600"
+          style={{ fontFamily: "Inter, sans-serif" }}
+        >
+          {text}
+          <span className="ml-8 text-neutral-800">·</span>
+        </span>
+      ))}
+    </FastMarquee>
   </div>
 );
 
